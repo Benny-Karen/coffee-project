@@ -5,7 +5,7 @@ function renderCoffee(coffee) {
     // html += '<div>' + coffee.id + '</div>';
     html += '<div>' + coffee.name + '</div>';
     html += '<span>' + coffee.roast + '<span>';
-    html += '</div>';
+    html += '</tr>';
 
     return html;
 }
@@ -48,43 +48,35 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'}
     ];
 
-function searchList () {
-    var newList = [];
-    if (roastSelection.value === 'roastSelection') {
-        coffees.forEach(function (coffee) {
-            if (coffee.name.toLowerCase().includes(nameSelection.value.toLowerCase())) {
-                newList.push(coffee);
-            }
-        });
-        tbody.innerHTML = renderCoffees(newList);
-    }
-    else {
-        var newCoffeeList = [];
-        coffees.forEach(function (coffee) {
-            if (coffee.roast === roastSelection.value) {
-                newCoffeeList.push(coffee);
-            }
-        });
-        newList = [];
-        newCoffeeList.forEach(function (coffee) {
-            var coffeeName = coffee.name;
-            if (coffeeName.toLowerCase().includes(nameSelection.value.toLowerCase())) {
-                newList.push(coffee);
-            }
-        });
-        tbody.innerHTML = renderCoffees(newList);
-    }
-}
-// function to add new coffee
-
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var coffeeButton = document.querySelector('#coffeeName'); //search btn
-var addCoffeeButton = document.querySelector('addCoffee') // add coffee
+var searchFilter = document.querySelector('#coffeeName'); //search btn
+// var addCoffeeButton = document.querySelector('addCoffee'); // add coffee
 
 tbody.innerHTML = renderCoffees(coffees);
 
+function updateCoffeesSearch(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    var selectedRoast = searchFilter.value;
+    var filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.name.toLowerCase().includes(selectedRoast.toLowerCase()) === true) {
+            filteredCoffees.push(coffee);
+        } else if(selectedRoast === ""){
+            filteredCoffees = coffees;
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+searchFilter.addEventListener("input", function(e) {
+    updateCoffeesSearch(e);
+});
+
 submitButton.addEventListener('click', updateCoffees);
-coffeeButton.addEventListener('click',);
+submitButton.addEventListener('click', function (e) {
+    updateCoffeesSearch(e);
+});
+
 
