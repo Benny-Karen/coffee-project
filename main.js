@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<div>' + coffee.id + '</div>';
+    // html += '<div>' + coffee.id + '</div>';
     html += '<div>' + coffee.name + '</div>';
     html += '<span>' + coffee.roast + '<span>';
     html += '</div>';
@@ -17,6 +17,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// filters coffees
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -46,10 +47,44 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'}
     ];
+
+function searchList () {
+    var newList = [];
+    if (roastSelection.value === 'roastSelection') {
+        coffees.forEach(function (coffee) {
+            if (coffee.name.toLowerCase().includes(nameSelection.value.toLowerCase())) {
+                newList.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(newList);
+    }
+    else {
+        var newCoffeeList = [];
+        coffees.forEach(function (coffee) {
+            if (coffee.roast === roastSelection.value) {
+                newCoffeeList.push(coffee);
+            }
+        });
+        newList = [];
+        newCoffeeList.forEach(function (coffee) {
+            var coffeeName = coffee.name;
+            if (coffeeName.toLowerCase().includes(nameSelection.value.toLowerCase())) {
+                newList.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(newList);
+    }
+}
+// function to add new coffee
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeButton = document.querySelector('#coffeeName'); //search btn
+var addCoffeeButton = document.querySelector('addCoffee') // add coffee
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+coffeeButton.addEventListener('click',);
+

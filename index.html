@@ -43,8 +43,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="coffeName"> Coffee Name</label>
-                <input type="text" class="form-control" id="coffeName" placeholder="Enter Coffee Name">
+                <label for="coffeeName"> Coffee Name</label>
+                <input oninput="updateResult(this.value)" type="text" class="form-control" id="coffeeName" placeholder="Enter Coffee Name">
             </div>
             <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
             <hr>    <!-- LINE BREAK-->
@@ -52,8 +52,8 @@
             <h3>Add a Coffee</h3>
 
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Roast</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <label for="addCoffee">Roast</label>
+                <select class="form-control" id="addCoffee">
                     <option>All</option>
                     <option>Light</option>
                     <option>Medium</option>
