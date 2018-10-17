@@ -2,34 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
     <h1>Coffee!</h1>
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submit" type="submit" />
-    </form>
-<div>
-    <table>
-        <thead>
-            <tr>
-                <div>ID</div>
-                <div>NAME</div>
-                <div>ROAST</div>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
-</div>
+    <hr>
+    <div>
+        <form>
+            <label for="roast-selection"></label>
+            <select id="roast-selection">
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+            <input id="submit" type="submit"/>
+        </form>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <div>ID</div>
+                        <div>NAME</div>
+                        <div>ROAST</div>
+                    </tr>
+                </thead>
+                <tbody id="coffees"></tbody>
+            </table>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="roast1">Roast</label>
+                <select class="form-control" id="roast1">
+                    <option>All</option>
+                    <option>Light</option>
+                    <option>Medium</option>
+                    <option>Dark</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="coffeName"> Coffee Name</label>
+                <input type="text" class="form-control" id="coffeName" placeholder="Enter Coffee Name">
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+            <hr>    <!-- LINE BREAK-->
 
+            <h3>Add a Coffee</h3>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Roast</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All</option>
+                    <option>Light</option>
+                    <option>Medium</option>
+                    <option>Dark</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="addName">Name</label>
+                <input type="text" class="form-control" id="addName" placeholder="Add Coffee Name">
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+
+        </form>
+    </div>
     <script src="main.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
