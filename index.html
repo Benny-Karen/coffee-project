@@ -24,15 +24,18 @@
             <table>
                 <thead>
                     <tr>
-                        <div>ID</div>
-                        <div>NAME</div>
-                        <div>ROAST</div>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>ROAST</th>
                     </tr>
                 </thead>
                 <tbody id="coffees"></tbody>
             </table>
         </div>
         <form>
+
+            <!--FIRST SELECTION-->
+
             <div class="form-group">
                 <label for="roast1">Roast</label>
                 <select class="form-control" id="roast1">
@@ -42,28 +45,42 @@
                     <option>Dark</option>
                 </select>
             </div>
+
+            <!--FIRST SEARCH-->
+
             <div class="form-group">
                 <label for="coffeeName"> Coffee Name</label>
-                <input oninput="updateResult(this.value)" type="text" class="form-control" id="coffeeName" placeholder="Enter Coffee Name">
+                <input type="text" class="form-control" id="coffeeName" placeholder="Search Coffee Name">
             </div>
+
+            <!--FIRST BUTTON-->
+
             <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
-            <hr>    <!-- LINE BREAK-->
+
+            <hr><!-- LINE BREAK-->
 
             <h3>Add a Coffee</h3>
 
+            <!--SECOND SELECTION-->
+
             <div class="form-group">
-                <label for="addCoffee">Roast</label>
-                <select class="form-control" id="addCoffee">
+                <label for="typeOfCoffee">Roast</label>
+                <select class="form-control" id="typeOfCoffee">
                     <option>All</option>
                     <option>Light</option>
                     <option>Medium</option>
                     <option>Dark</option>
                 </select>
             </div>
+
+            <!--SECOND SEARCH-->
+
             <div class="form-group">
-                <label for="addName">Name</label>
-                <input type="text" class="form-control" id="addName" placeholder="Add Coffee Name">
+                <label for="addSecondName">Name</label>
+                <input type="text" class="form-control" id="addSecondName" placeholder="Add Coffee Name">
             </div>
+
+            <!--SECOND BUTTON-->
 
             <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
 
