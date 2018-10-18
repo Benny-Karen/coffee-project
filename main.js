@@ -4,7 +4,7 @@ function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     // html += '<div>' + coffee.id + '</div>';
     html += '<div>' + coffee.name + '</div>';
-    html += '<span>' + coffee.roast + '<span>';
+    html +=  coffee.roast;
     html += '</div>';
 
     return html;
@@ -71,11 +71,31 @@ function updateCoffeesSearch(e) {
     div.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// function to add new coffee and roast to current coffee list
+function addNewCoffee() {
+    var addNewRoast = document.getElementById("selectNewCoffee");
+    var newCoffee = document.getElementById("addSecondCoffee");
+    var updatedCoffee = {
+        name: newCoffee.value,
+        roast: addNewRoast.value
+    };
+    coffees.push(updatedCoffee);
+    div.innerHTML = renderCoffees(coffees);
+}
+addNewCoffee();
+
 searchFilter.addEventListener("input", function(e) {
     updateCoffeesSearch(e);
 });
 
+// variables for buttons
+var addCoffeeButton = document.querySelector("#submit2");
+
+
 roastSelection.addEventListener("change", updateCoffees);
+// Add new coffee submit button
+addCoffeeButton.addEventListener('click', addNewCoffee);
+
 // submitButton.addEventListener('click', )//SUBMIT TO BACKEND
 
 
