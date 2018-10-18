@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
@@ -10,73 +10,59 @@
 <body>
     <h1>Coffee!</h1>
     <hr>
-    <form>
+<div class="container">
+    <div>ID</div>
+    <div>NAME</div>
+    <div>ROAST</div>
+    <div id="coffees"></div>
+
+    <div class = "form-group">
         <label for="roast-selection"></label>
-        <select id="roast-selection">
+        <select class="form-control" id="roast-selection">
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
+            <option selected="">All</option>
         </select>
-        <input id="submit" type="submit"/>
-    </form>
-        <div>ID</div>
-        <div>NAME</div>
-        <div>ROAST</div>
-        <div id="coffees"></div>
-
-
-            <!--FIRST SELECTION-->
-
-            <div class="form-group">
-                <label for="roast1">Roast</label>
-                <select class="form-control" id="roast1">
-                    <option>All</option>
-                    <option>Light</option>
-                    <option>Medium</option>
-                    <option>Dark</option>
-                </select>
-            </div>
-
-            <!--FIRST SEARCH-->
-
-            <div class="form-group">
-                <label for="coffeeName"> Coffee Name</label>
-                <input type="text" class="form-control" id="coffeeName" placeholder="Search Coffee Name">
-            </div>
-
-            <!--FIRST BUTTON-->
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
-
-            <hr><!-- LINE BREAK-->
-
-            <h3>Add a Coffee</h3>
-
-            <!--SECOND SELECTION-->
-
-            <div class="form-group">
-                <label for="typeOfCoffee">Roast</label>
-                <select class="form-control" id="typeOfCoffee">
-                    <option>All</option>
-                    <option>Light</option>
-                    <option>Medium</option>
-                    <option>Dark</option>
-                </select>
-            </div>
-
-            <!--SECOND SEARCH-->
-
-            <div class="form-group">
-                <label for="addSecondName">Name</label>
-                <input type="text" class="form-control" id="addSecondName" placeholder="Add Coffee Name">
-            </div>
-
-            <!--SECOND BUTTON-->
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
-
-        </form>
     </div>
+
+    <!--FIRST SEARCH-->
+
+    <div class="form-group">
+        <label for="coffeeName"> Coffee Name</label>
+        <input type="text" class="form-control" id="coffeeName" placeholder="Search Coffee Name">
+    </div>
+
+    <button class="btn btn-primary btn-lg btn-block" id="submit" type="submit">Submit</button>
+
+    <hr><!-- LINE BREAK-->
+
+    <h3>Add a Coffee</h3>
+
+    <!--SECOND SELECTION-->
+
+    <div class="form-group">
+        <label for="typeOfCoffee">Roast</label>
+        <select class="form-control" id="typeOfCoffee">
+            <option>All</option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dark</option>
+        </select>
+    </div>
+
+    <!--SECOND SEARCH-->
+
+    <div class="form-group">
+        <label for="addSecondName">Name</label>
+        <input type="text" class="form-control" id="addSecondName" placeholder="Add Coffee Name">
+    </div>
+
+    <!--SECOND BUTTON-->
+
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+</div>
+
     <script src="main.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
