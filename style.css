@@ -1,3 +1,18 @@
+body {
+    background-image: url("coffee.jpg");
+    background-size: 1000px;
+}
+
+.jumbotron {
+    font-family: "Lucida Grande";
+    font-size: 40px;
+    color: white;
+}
+
+.container {
+    background:transparent;
+}
+
 table {
     border-collapse: collapse;
     margin: 15px 0;

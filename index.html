@@ -3,66 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
-    <h1>Coffee!</h1>
-    <hr>
-<div class="container">
-    <div>ID</div>
-    <div>NAME</div>
-    <div>ROAST</div>
-    <div id="coffees"></div>
-
-    <div class = "form-group">
-        <label for="roast-selection"></label>
-        <select class="form-control" id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-            <option selected="">All</option>
-        </select>
+    <div class="jumbotron text-center" style="background:transparent">
+        <h1 class="display-1 ">Coffee!</h1>
+        <hr class="my-6">
+        <p>Welcome to Lava Java!</p>
     </div>
 
-    <!--FIRST SEARCH-->
+    <div class="container">
+        <div class="row">
+            <div class="card text-center" style="width: auto;">
+                <h4 class="card-title">Coffee Selection</h4>
+                <span id="coffees"></span>
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label for="coffeeName"> Coffee Name</label>
-        <input type="text" class="form-control" id="coffeeName" placeholder="Search Coffee Name">
+            <div class = "form-group">
+                <label for="roast-selection"></label>
+                <select class="form-control" id="roast-selection">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                    <option selected="">All</option>
+                </select>
+            </div>
+
+            <!--FIRST SEARCH-->
+
+        <div class="form-group">
+            <label for="coffeeName"> Coffee Name</label>
+            <input type="text" class="form-control" id="coffeeName" placeholder="Search Coffee Name">
+        </div>
+
+        <button class="btn btn-primary btn-lg" id="submit" type="submit">Submit</button>
+
+        <hr><!-- LINE BREAK-->
+
+
+        <h3>Add a Coffee</h3>
+
+        <!--SECOND SELECTION-->
+
+        <div class="form-group">
+            <label for="selectNewCoffee">Roast</label>
+            <select class="form-control" id="selectNewCoffee">
+                <option>All</option>
+                <option>Light</option>
+                <option>Medium</option>
+                <option>Dark</option>
+            </select>
+        </div>
+
+        <!--SECOND SEARCH-->
+
+        <div class="form-group">
+            <label for="addSecondCoffee">Name</label>
+            <input type="text" class="form-control" id="addSecondCoffee" placeholder="Add Coffee Name">
+        </div>
+
+        <!--SECOND BUTTON-->
+
+        <button class="btn btn-primary btn-lg btn-block" id="submit2" type="submit">Submit</button>
+
     </div>
-
-    <button class="btn btn-primary btn-lg btn-block" id="submit" type="submit">Submit</button>
-
-    <hr><!-- LINE BREAK-->
-
-    <h3>Add a Coffee</h3>
-
-    <!--SECOND SELECTION-->
-
-    <div class="form-group">
-        <label for="selectNewCoffee">Roast</label>
-        <select class="form-control" id="selectNewCoffee">
-            <option>All</option>
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dark</option>
-        </select>
-    </div>
-
-    <!--SECOND SEARCH-->
-
-    <div class="form-group">
-        <label for="addSecondCoffee">Name</label>
-        <input type="text" class="form-control" id="addSecondCoffee" placeholder="Add Coffee Name">
-    </div>
-
-    <!--SECOND BUTTON-->
-
-    <button class="btn btn-primary btn-lg btn-block" id="submit2" type="submit">Submit</button>
-</div>
-
     <script src="main.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
