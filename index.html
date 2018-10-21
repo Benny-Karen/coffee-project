@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
+    <title>Welcome to Java Lava</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
     <div class="jumbotron text-center" style="background:transparent">
-        <h1 class="display-1 ">Coffee!</h1>
-        <hr class="my-6">
-        <p>Welcome to Lava Java!</p>
+        <h1 class="display-1 ">Welcome to Lava Java</h1>
+        <hr class="my-2">
+        <p>Now Serving Coffee!</p>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="card text-center" style="width: auto;">
+        <div>
+            <div class="card text-center" style="width: auto; background:transparent">
                 <h4 class="card-title">Coffee Selection</h4>
-                <span id="coffees"></span>
+                <span class="row col-6 col-6 " id="coffees"></span>
             </div>
         </div>
 
@@ -39,6 +39,8 @@
             <label for="coffeeName"> Coffee Name</label>
             <input type="text" class="form-control" id="coffeeName" placeholder="Search Coffee Name">
         </div>
+
+        <!--FIRST BUTTON-->
 
         <button class="btn btn-primary btn-lg" id="submit" type="submit">Submit</button>
 

@@ -1,24 +1,25 @@
 body {
-    background-image: url("coffee.jpg");
-    background-size: 1000px;
+    background-image: url("coffee1.jpeg");
+    background-size: 1800px;
 }
 
 .jumbotron {
-    font-family: "Lucida Grande";
+    font-family: "Blue Mountain Exprr";
     font-size: 40px;
     color: white;
 }
-
-.container {
-    background:transparent;
+.container .card {
+    border: none;
 }
-
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+.container #coffees {
+    font: 40px "Blue Mountain Exprr";
 }
+/*table {*/
+    /*border-collapse: collapse;*/
+    /*margin: 15px 0;*/
+/*}*/
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
+/*td, th {*/
+    /*border: 1px solid black;*/
+    /*padding: 5px 10px;*/
+/*}*/
