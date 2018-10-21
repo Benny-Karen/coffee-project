@@ -1,12 +1,11 @@
 "use strict";
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<div class="col-8 coffee">';
     // html += '<div>' + coffee.id + '</div>';
-    html += '<div>' + coffee.name + '</div>';
-    html +=  coffee.roast;
+    html += '<div class="row badge badge-pill">' + coffee.name + '</div>';
+    html += '<span class="badge badge-pill badge-light">'+ coffee.roast + '</span>';
     html += '</div>';
-
     return html;
 }
 function renderCoffees(coffees) {
@@ -57,6 +56,7 @@ var searchFilter = document.querySelector('#coffeeName'); //search btn
 
 div.innerHTML = renderCoffees(coffees);
 
+//function to search New Coffee
 function updateCoffeesSearch(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = searchFilter.value;
@@ -64,12 +64,20 @@ function updateCoffeesSearch(e) {
     coffees.forEach(function(coffee) {
         if (coffee.name.toLowerCase().includes(selectedRoast.toLowerCase()) === true) {
             filteredCoffees.push(coffee);
-        } else if(selectedRoast === ""){
+        } else if(selectedRoast === " "){
             filteredCoffees = coffees;
         }
     });
     div.innerHTML = renderCoffees(filteredCoffees);
 }
+
+//ADDED EVENT LISTENER TO SEARCH FILTER//
+
+searchFilter.addEventListener("input", function(e) {
+    updateCoffeesSearch(e);
+});
+
+
 
 // function to add new coffee and roast to current coffee list
 function addNewCoffee() {
@@ -80,13 +88,10 @@ function addNewCoffee() {
         roast: addNewRoast.value
     };
     coffees.push(updatedCoffee);
-    div.innerHTML = renderCoffees(coffees);
+    // div.innerHTML = renderCoffees(coffees);
 }
 addNewCoffee();
 
-searchFilter.addEventListener("input", function(e) {
-    updateCoffeesSearch(e);
-});
 
 // variables for buttons
 var addCoffeeButton = document.querySelector("#submit2");
